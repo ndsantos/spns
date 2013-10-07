@@ -7,6 +7,7 @@
 //
 
 #import "SPAppDelegate.h"
+#import "SPMainController.h"
 
 @implementation SPAppDelegate
 
@@ -17,7 +18,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    //create and assign navigation
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = navigationController;
+    
+    //create and assign main controller
+    SPMainController *mainController = [[SPMainController alloc] initWithNibName:nil bundle:nil];
+    [navigationController pushViewController:mainController animated:NO];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

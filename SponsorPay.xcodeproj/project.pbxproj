@@ -22,6 +22,7 @@
 		4FCD53141803173700504B25 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FCD52F81803173700504B25 /* CoreData.framework */; };
 		4FCD531C1803173700504B25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FCD531A1803173700504B25 /* InfoPlist.strings */; };
 		4FCD531E1803173700504B25 /* SponsorPayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD531D1803173700504B25 /* SponsorPayTests.m */; };
+		4FCD532A180318F800504B25 /* SPMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD5329180318F800504B25 /* SPMainController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		4FCD53191803173700504B25 /* SponsorPayTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SponsorPayTests-Info.plist"; sourceTree = "<group>"; };
 		4FCD531B1803173700504B25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4FCD531D1803173700504B25 /* SponsorPayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SponsorPayTests.m; sourceTree = "<group>"; };
+		4FCD5328180318F800504B25 /* SPMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPMainController.h; path = Controllers/SPMainController.h; sourceTree = "<group>"; };
+		4FCD5329180318F800504B25 /* SPMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMainController.m; path = Controllers/SPMainController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,7 @@
 		4FCD52FA1803173700504B25 /* SponsorPay */ = {
 			isa = PBXGroup;
 			children = (
+				4FCD5327180318A000504B25 /* Contollers */,
 				4FCD53031803173700504B25 /* SPAppDelegate.h */,
 				4FCD53041803173700504B25 /* SPAppDelegate.m */,
 				4FCD53091803173700504B25 /* Images.xcassets */,
@@ -151,6 +155,15 @@
 				4FCD531A1803173700504B25 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4FCD5327180318A000504B25 /* Contollers */ = {
+			isa = PBXGroup;
+			children = (
+				4FCD5328180318F800504B25 /* SPMainController.h */,
+				4FCD5329180318F800504B25 /* SPMainController.m */,
+			);
+			name = Contollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FCD53011803173700504B25 /* main.m in Sources */,
+				4FCD532A180318F800504B25 /* SPMainController.m in Sources */,
 				4FCD53051803173700504B25 /* SPAppDelegate.m in Sources */,
 				4FCD53081803173700504B25 /* SponsorPay.xcdatamodeld in Sources */,
 			);
@@ -454,6 +468,7 @@
 				4FCD53231803173700504B25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FCD53241803173700504B25 /* Build configuration list for PBXNativeTarget "SponsorPayTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +477,7 @@
 				4FCD53261803173700504B25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
