@@ -28,6 +28,7 @@
 		4FCD5338180321BB00504B25 /* sponsorpay.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FCD5337180321BB00504B25 /* sponsorpay.png */; };
 		4FCD533E1803250F00504B25 /* UIColor+hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD533B1803250F00504B25 /* UIColor+hex.m */; };
 		4FCD533F1803250F00504B25 /* UIFont+helvetica.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD533D1803250F00504B25 /* UIFont+helvetica.m */; };
+		4FCD534318032A4E00504B25 /* SPCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD534218032A4E00504B25 /* SPCustomTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,8 @@
 		4FCD533B1803250F00504B25 /* UIColor+hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+hex.m"; sourceTree = "<group>"; };
 		4FCD533C1803250F00504B25 /* UIFont+helvetica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+helvetica.h"; sourceTree = "<group>"; };
 		4FCD533D1803250F00504B25 /* UIFont+helvetica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+helvetica.m"; sourceTree = "<group>"; };
+		4FCD534118032A4E00504B25 /* SPCustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPCustomTextField.h; path = Views/SPCustomTextField.h; sourceTree = "<group>"; };
+		4FCD534218032A4E00504B25 /* SPCustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPCustomTextField.m; path = Views/SPCustomTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,7 @@
 		4FCD52FA1803173700504B25 /* SponsorPay */ = {
 			isa = PBXGroup;
 			children = (
+				4FCD5340180329F200504B25 /* Views */,
 				4FCD53391803250F00504B25 /* Utils */,
 				4FCD5336180321BB00504B25 /* Resources */,
 				4FCD5327180318A000504B25 /* Contollers */,
@@ -221,6 +225,15 @@
 				4FCD533D1803250F00504B25 /* UIFont+helvetica.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		4FCD5340180329F200504B25 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4FCD534118032A4E00504B25 /* SPCustomTextField.h */,
+				4FCD534218032A4E00504B25 /* SPCustomTextField.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FCD534318032A4E00504B25 /* SPCustomTextField.m in Sources */,
 				4FCD533E1803250F00504B25 /* UIColor+hex.m in Sources */,
 				4FCD533518031DCE00504B25 /* SPMainPadViewController.m in Sources */,
 				4FCD533F1803250F00504B25 /* UIFont+helvetica.m in Sources */,

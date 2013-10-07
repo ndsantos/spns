@@ -12,7 +12,13 @@
  */
 
 #import "SPMainController.h"
+#import "SPCustomTextField.h"
 
 @interface SPMainPhoneViewController : SPMainController
+
+
+//keyboard events
+-(void) keyboardWillShow:(NSNotification*) notification;
+-(void) keyboardWillHide:(NSNotification *)notification;
 
 @end
