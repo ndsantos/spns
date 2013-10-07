@@ -15,10 +15,10 @@ This class is responsible for:
 
 */
 
-#define kTagUserIdTextField     3423;
-#define kTagApiKeyTextField     3424;
-#define kTagAppIdTextField      3425;
-#define kTagCustomTextField     3426;
+#define kTagUserIdTextField     3423
+#define kTagApiKeyTextField     3424
+#define kTagAppIdTextField      3425
+#define kTagCustomTextField     3426
 
 
 #import <UIKit/UIKit.h>

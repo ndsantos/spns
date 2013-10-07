@@ -53,6 +53,12 @@
     _mainScrollView.contentSize = self.view.bounds.size;
     [self.view addSubview:_mainScrollView];
     
+
+    UITapGestureRecognizer *singleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    singleTapRecognizer.numberOfTapsRequired = 1;
+    singleTapRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:singleTapRecognizer];
+    
     
     //sponsor image
     CGSize imageSize = CGSizeMake(617/3, 105/3);
@@ -82,6 +88,7 @@
     userIdTextField.placeholder = NSLocalizedString(@"User ID", @"User ID");
     userIdTextField.returnKeyType = UIReturnKeyNext;
     userIdTextField.tag = kTagUserIdTextField;
+    userIdTextField.delegate = self;
     [_mainScrollView addSubview:userIdTextField];
 
     fieldsY += fieldsMargin;
@@ -91,6 +98,7 @@
     apiKeyTextField.placeholder = NSLocalizedString(@"Api Key", @"Api Key");
     apiKeyTextField.returnKeyType = UIReturnKeyNext;
     apiKeyTextField.tag = kTagApiKeyTextField;
+    apiKeyTextField.delegate = self;
     [_mainScrollView addSubview:apiKeyTextField];
     
     fieldsY += fieldsMargin;
@@ -100,6 +108,7 @@
     appIdTextField.placeholder = NSLocalizedString(@"App ID", @"App ID");
     appIdTextField.returnKeyType = UIReturnKeyNext;
     appIdTextField.tag = kTagAppIdTextField;
+    appIdTextField.delegate = self;
     [_mainScrollView addSubview:appIdTextField];
 
     fieldsY += fieldsMargin;
@@ -107,8 +116,9 @@
     //app id input
     SPCustomTextField *customTextField = [[SPCustomTextField alloc] initWithFrame:CGRectMake(sponsorImage.frame.origin.x, fieldsY, sponsorImage.frame.size.width, 25)];
     customTextField.placeholder = NSLocalizedString(@"Custom", @"Custom");
-    customTextField.returnKeyType = UIReturnKeyNext;
+    customTextField.returnKeyType = UIReturnKeyGo;
     customTextField.tag = kTagCustomTextField;
+    customTextField.delegate = self;
     [_mainScrollView addSubview:customTextField];
 
     
@@ -122,6 +132,13 @@
 }
 
 #pragma mark keyboard notifications
+
+-(void) hideKeyboard{
+    [[self.view viewWithTag:kTagUserIdTextField] resignFirstResponder];
+    [[self.view viewWithTag:kTagApiKeyTextField] resignFirstResponder];
+    [[self.view viewWithTag:kTagAppIdTextField] resignFirstResponder];
+    [[self.view viewWithTag:kTagCustomTextField] resignFirstResponder];
+}
 -(void)keyboardWillShow:(NSNotification *)notification{
     
     NSTimeInterval animationDuration;
@@ -137,10 +154,12 @@
     [UIView animateWithDuration:animationDuration delay:0 options:animationOptions animations:^{
         _mainScrollView.frame = CGRectMake(0, 0, self.view.bounds.size.width,self.view.bounds.size.height - keyboardFrame.size.height);
     } completion:^(BOOL finished) {
-        [_mainScrollView setContentOffset:CGPointMake(0, 170) animated:YES];
+        _mainScrollView.contentSize = self.view.bounds.size;
     }];
     
-    
+    //show hide keyboard button
+    //UIBarButtonItem *hideKeyboard = [UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"keyboard_hide.png"] style:UIBarButtonItemStylePlain target:self.view action:<#(SEL)#>
+    //self.navigationItem.rightBarButtonItem
 }
 
 -(void)keyboardWillHide:(NSNotification *)notification{
@@ -154,11 +173,39 @@
     
     [UIView animateWithDuration:animationDuration delay:0 options:animationOptions animations:^{
         _mainScrollView.frame = self.view.bounds;
+        _mainScrollView.contentSize = self.view.bounds.size;
     } completion:^(BOOL finished) {
         
     }];
 
-    
+}
+
+#pragma mark text field delegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+
+    switch (textField.tag) {
+        case kTagUserIdTextField:{
+            [((UITextField *) [self.view viewWithTag:kTagApiKeyTextField]) becomeFirstResponder];
+            break;
+        }
+        case kTagApiKeyTextField:{
+            [((UITextField *) [self.view viewWithTag:kTagAppIdTextField]) becomeFirstResponder];
+            break;
+        }
+        case kTagAppIdTextField:{
+            [((UITextField *) [self.view viewWithTag:kTagCustomTextField]) becomeFirstResponder];
+            break;
+        }
+        case kTagCustomTextField:{
+            [textField resignFirstResponder];
+            // request
+            break;
+        }
+        default:
+            break;
+    }
+    return YES;
 }
 
 @end
