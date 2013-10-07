@@ -89,6 +89,8 @@
     userIdTextField.returnKeyType = UIReturnKeyNext;
     userIdTextField.tag = kTagUserIdTextField;
     userIdTextField.delegate = self;
+    userIdTextField.showDefaultButton = YES;
+    userIdTextField.defaultValue = kDefaultUserId;
     [_mainScrollView addSubview:userIdTextField];
 
     fieldsY += fieldsMargin;
@@ -99,7 +101,11 @@
     apiKeyTextField.returnKeyType = UIReturnKeyNext;
     apiKeyTextField.tag = kTagApiKeyTextField;
     apiKeyTextField.delegate = self;
+    apiKeyTextField.showDefaultButton = YES;
+    apiKeyTextField.defaultValue = kDefaultApiKey;
     [_mainScrollView addSubview:apiKeyTextField];
+    
+    
     
     fieldsY += fieldsMargin;
     
@@ -109,6 +115,8 @@
     appIdTextField.returnKeyType = UIReturnKeyNext;
     appIdTextField.tag = kTagAppIdTextField;
     appIdTextField.delegate = self;
+    appIdTextField.showDefaultButton = YES;
+    appIdTextField.defaultValue = kDefaultAppId;
     [_mainScrollView addSubview:appIdTextField];
 
     fieldsY += fieldsMargin;
@@ -124,6 +132,10 @@
     
     
  }
+
+-(void)setDefaultApiKey{
+    ((UITextField*)[self.view viewWithTag:kTagApiKeyTextField]).text = @"k1c915e3b5d42d05136185030892fbb846c278927";
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -200,6 +212,7 @@
         case kTagCustomTextField:{
             [textField resignFirstResponder];
             // request
+            [super requestDataFromServer];
             break;
         }
         default:
@@ -207,5 +220,7 @@
     }
     return YES;
 }
+
+
 
 @end

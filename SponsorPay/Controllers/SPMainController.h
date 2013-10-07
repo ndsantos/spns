@@ -20,10 +20,17 @@ This class is responsible for:
 #define kTagAppIdTextField      3425
 #define kTagCustomTextField     3426
 
+#define kDefaultAppId               @"2070"
+#define kDefaultApiKey              @"1c915e3b5d42d05136185030892fbb846c278927"
+#define kDefaultUserId              @"spiderman"
 
 #import <UIKit/UIKit.h>
 
 @interface SPMainController : UIViewController
 
+-(void) requestDataFromServer;
+-(BOOL) validateForm;
+
+-(void) showError:(NSString*) errorMessage;
 
 @end

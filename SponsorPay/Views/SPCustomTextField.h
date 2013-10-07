@@ -10,4 +10,9 @@
 
 @interface SPCustomTextField : UITextField
 
+@property (nonatomic, strong) NSString *defaultValue;
+
+@property (nonatomic) BOOL showDefaultButton;
+
+
 @end

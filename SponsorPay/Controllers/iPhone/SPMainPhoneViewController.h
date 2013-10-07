@@ -16,6 +16,8 @@
 
 @interface SPMainPhoneViewController : SPMainController <UITextFieldDelegate>
 
+-(void) setDefaultApiKey;
+
 
 //keyboard events
 -(void) hideKeyboard;
