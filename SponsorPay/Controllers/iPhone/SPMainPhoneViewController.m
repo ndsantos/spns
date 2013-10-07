@@ -130,6 +130,15 @@
     [_mainScrollView addSubview:customTextField];
 
     
+    CGSize goButtonSize = CGSizeMake(43, 20);
+    UIButton *goButton = [[UIButton alloc] initWithFrame:CGRectMake(customTextField.frame.origin.x + customTextField.frame.size.width - goButtonSize.width, customTextField.frame.origin.y + customTextField.frame.size.height + 3, goButtonSize.width, goButtonSize.height)];
+    [goButton setTitle:NSLocalizedString(@"go", @"go").uppercaseString forState:UIControlStateNormal];
+    goButton.backgroundColor = [UIColor colorWithHexString:@"d80100"];
+    goButton.titleLabel.font = [UIFont lightHelveticaWithSize:15];
+    [goButton addTarget:self action:@selector(requestDataFromServer) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:goButton];
+    
+    
     
  }
 
