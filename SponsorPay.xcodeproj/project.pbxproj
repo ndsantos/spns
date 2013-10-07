@@ -23,6 +23,11 @@
 		4FCD531C1803173700504B25 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FCD531A1803173700504B25 /* InfoPlist.strings */; };
 		4FCD531E1803173700504B25 /* SponsorPayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD531D1803173700504B25 /* SponsorPayTests.m */; };
 		4FCD532A180318F800504B25 /* SPMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD5329180318F800504B25 /* SPMainController.m */; };
+		4FCD533218031DB100504B25 /* SPMainPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD533118031DB100504B25 /* SPMainPhoneViewController.m */; };
+		4FCD533518031DCE00504B25 /* SPMainPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD533418031DCE00504B25 /* SPMainPadViewController.m */; };
+		4FCD5338180321BB00504B25 /* sponsorpay.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FCD5337180321BB00504B25 /* sponsorpay.png */; };
+		4FCD533E1803250F00504B25 /* UIColor+hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD533B1803250F00504B25 /* UIColor+hex.m */; };
+		4FCD533F1803250F00504B25 /* UIFont+helvetica.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD533D1803250F00504B25 /* UIFont+helvetica.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +61,15 @@
 		4FCD531D1803173700504B25 /* SponsorPayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SponsorPayTests.m; sourceTree = "<group>"; };
 		4FCD5328180318F800504B25 /* SPMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPMainController.h; path = Controllers/SPMainController.h; sourceTree = "<group>"; };
 		4FCD5329180318F800504B25 /* SPMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPMainController.m; path = Controllers/SPMainController.m; sourceTree = "<group>"; };
+		4FCD533018031DB100504B25 /* SPMainPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMainPhoneViewController.h; sourceTree = "<group>"; };
+		4FCD533118031DB100504B25 /* SPMainPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPMainPhoneViewController.m; sourceTree = "<group>"; };
+		4FCD533318031DCE00504B25 /* SPMainPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPMainPadViewController.h; sourceTree = "<group>"; };
+		4FCD533418031DCE00504B25 /* SPMainPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPMainPadViewController.m; sourceTree = "<group>"; };
+		4FCD5337180321BB00504B25 /* sponsorpay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sponsorpay.png; sourceTree = "<group>"; };
+		4FCD533A1803250F00504B25 /* UIColor+hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+hex.h"; sourceTree = "<group>"; };
+		4FCD533B1803250F00504B25 /* UIColor+hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+hex.m"; sourceTree = "<group>"; };
+		4FCD533C1803250F00504B25 /* UIFont+helvetica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+helvetica.h"; sourceTree = "<group>"; };
+		4FCD533D1803250F00504B25 /* UIFont+helvetica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+helvetica.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +132,8 @@
 		4FCD52FA1803173700504B25 /* SponsorPay */ = {
 			isa = PBXGroup;
 			children = (
+				4FCD53391803250F00504B25 /* Utils */,
+				4FCD5336180321BB00504B25 /* Resources */,
 				4FCD5327180318A000504B25 /* Contollers */,
 				4FCD53031803173700504B25 /* SPAppDelegate.h */,
 				4FCD53041803173700504B25 /* SPAppDelegate.m */,
@@ -160,10 +176,51 @@
 		4FCD5327180318A000504B25 /* Contollers */ = {
 			isa = PBXGroup;
 			children = (
+				4FCD532F18031DB100504B25 /* iPhone */,
+				4FCD532E18031D9300504B25 /* iPad */,
 				4FCD5328180318F800504B25 /* SPMainController.h */,
 				4FCD5329180318F800504B25 /* SPMainController.m */,
 			);
 			name = Contollers;
+			sourceTree = "<group>";
+		};
+		4FCD532E18031D9300504B25 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				4FCD533318031DCE00504B25 /* SPMainPadViewController.h */,
+				4FCD533418031DCE00504B25 /* SPMainPadViewController.m */,
+			);
+			name = iPad;
+			path = Controllers/iPad;
+			sourceTree = "<group>";
+		};
+		4FCD532F18031DB100504B25 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				4FCD533018031DB100504B25 /* SPMainPhoneViewController.h */,
+				4FCD533118031DB100504B25 /* SPMainPhoneViewController.m */,
+			);
+			name = iPhone;
+			path = Controllers/iPhone;
+			sourceTree = "<group>";
+		};
+		4FCD5336180321BB00504B25 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4FCD5337180321BB00504B25 /* sponsorpay.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4FCD53391803250F00504B25 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4FCD533A1803250F00504B25 /* UIColor+hex.h */,
+				4FCD533B1803250F00504B25 /* UIColor+hex.m */,
+				4FCD533C1803250F00504B25 /* UIFont+helvetica.h */,
+				4FCD533D1803250F00504B25 /* UIFont+helvetica.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +301,7 @@
 			files = (
 				4FCD52FF1803173700504B25 /* InfoPlist.strings in Resources */,
 				4FCD530A1803173700504B25 /* Images.xcassets in Resources */,
+				4FCD5338180321BB00504B25 /* sponsorpay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +320,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FCD533E1803250F00504B25 /* UIColor+hex.m in Sources */,
+				4FCD533518031DCE00504B25 /* SPMainPadViewController.m in Sources */,
+				4FCD533F1803250F00504B25 /* UIFont+helvetica.m in Sources */,
 				4FCD53011803173700504B25 /* main.m in Sources */,
+				4FCD533218031DB100504B25 /* SPMainPhoneViewController.m in Sources */,
 				4FCD532A180318F800504B25 /* SPMainController.m in Sources */,
 				4FCD53051803173700504B25 /* SPAppDelegate.m in Sources */,
 				4FCD53081803173700504B25 /* SponsorPay.xcdatamodeld in Sources */,

@@ -8,6 +8,8 @@
 
 #import "SPAppDelegate.h"
 #import "SPMainController.h"
+#import "SPMainPadViewController.h"
+#import "SPMainPhoneViewController.h"
 
 @implementation SPAppDelegate
 
@@ -22,9 +24,18 @@
     //create and assign navigation
     UINavigationController *navigationController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
     self.window.rootViewController = navigationController;
+    navigationController.navigationBar.translucent = NO;
     
     //create and assign main controller
-    SPMainController *mainController = [[SPMainController alloc] initWithNibName:nil bundle:nil];
+    SPMainController *mainController = nil;
+
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        //iPad
+        mainController = [[SPMainPadViewController alloc] initWithNibName:nil bundle:nil];
+    } else {
+        //iPhone
+        mainController = [[SPMainPhoneViewController alloc] initWithNibName:nil bundle:nil];
+    }
     [navigationController pushViewController:mainController animated:NO];
     
     self.window.backgroundColor = [UIColor whiteColor];

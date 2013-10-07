@@ -11,9 +11,10 @@
 @implementation SPMainController
 
 
--(void)viewDidLoad{
-    [super viewDidLoad];
-    
-    
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if(self = [super initWithNibName:nil bundle:nil]){
+        self.title = NSLocalizedString(@"Set Up", @"Main controller title");
+    }
+    return self;
 }
 @end
