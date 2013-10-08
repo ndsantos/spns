@@ -62,6 +62,10 @@
 		4FF36B7E18046351009D664B /* SPOffersPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B7D18046351009D664B /* SPOffersPadViewController.m */; };
 		4FF36B8118046532009D664B /* SPOfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B8018046532009D664B /* SPOfferCell.m */; };
 		4FF36B8418046816009D664B /* SPLinkedInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B8318046816009D664B /* SPLinkedInViewController.m */; };
+		4FF36B8618047402009D664B /* SPConnectionManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B8518047402009D664B /* SPConnectionManagerTests.m */; };
+		4FF36B8A18047736009D664B /* SPOffersViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B8918047736009D664B /* SPOffersViewControllerTests.m */; };
+		4FF36B8C1804775E009D664B /* NSSTring_sha1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B8B1804775E009D664B /* NSSTring_sha1Tests.m */; };
+		4FF36B8E18047858009D664B /* SPMainControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B8D18047858009D664B /* SPMainControllerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +177,10 @@
 		4FF36B8018046532009D664B /* SPOfferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPOfferCell.m; path = Views/SPOfferCell.m; sourceTree = "<group>"; };
 		4FF36B8218046816009D664B /* SPLinkedInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLinkedInViewController.h; path = Controllers/SPLinkedInViewController.h; sourceTree = "<group>"; };
 		4FF36B8318046816009D664B /* SPLinkedInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLinkedInViewController.m; path = Controllers/SPLinkedInViewController.m; sourceTree = "<group>"; };
+		4FF36B8518047402009D664B /* SPConnectionManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPConnectionManagerTests.m; sourceTree = "<group>"; };
+		4FF36B8918047736009D664B /* SPOffersViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOffersViewControllerTests.m; sourceTree = "<group>"; };
+		4FF36B8B1804775E009D664B /* NSSTring_sha1Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSSTring_sha1Tests.m; sourceTree = "<group>"; };
+		4FF36B8D18047858009D664B /* SPMainControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPMainControllerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +277,10 @@
 			children = (
 				4FCD531D1803173700504B25 /* SponsorPayTests.m */,
 				4FCD53181803173700504B25 /* Supporting Files */,
+				4FF36B8518047402009D664B /* SPConnectionManagerTests.m */,
+				4FF36B8918047736009D664B /* SPOffersViewControllerTests.m */,
+				4FF36B8B1804775E009D664B /* NSSTring_sha1Tests.m */,
+				4FF36B8D18047858009D664B /* SPMainControllerTests.m */,
 			);
 			path = SponsorPayTests;
 			sourceTree = "<group>";
@@ -589,6 +601,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF36B8618047402009D664B /* SPConnectionManagerTests.m in Sources */,
+				4FF36B8A18047736009D664B /* SPOffersViewControllerTests.m in Sources */,
+				4FF36B8E18047858009D664B /* SPMainControllerTests.m in Sources */,
+				4FF36B8C1804775E009D664B /* NSSTring_sha1Tests.m in Sources */,
 				4FCD531E1803173700504B25 /* SponsorPayTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

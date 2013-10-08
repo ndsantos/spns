@@ -94,7 +94,7 @@
     
     // create request
     NSURL *url = [self urlFromParams:params];
-    NSLog(@"%@", url);
+
     AFHTTPRequestOperation *request = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:url]];
     
     //set serializer to json
@@ -102,6 +102,8 @@
     
     [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
+        
+        //verify hash on response
         if([[NSString stringWithFormat:@"%@%@", operation.responseString, apiKey].sha1String isEqualToString:[operation.response.allHeaderFields valueForKey:@"X-Sponsorpay-Response-Signature"]]){
             
             
