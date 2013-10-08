@@ -17,5 +17,6 @@
 
 #import "UIColor+hex.h"
 #import "UIFont+helvetica.h"
+#import "NSString+SHA1.h"
 
 #endif

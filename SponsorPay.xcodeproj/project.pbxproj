@@ -38,6 +38,9 @@
 		4FCD536018034FA600504B25 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD535518034FA600504B25 /* AFURLRequestSerialization.m */; };
 		4FCD536118034FA600504B25 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD535718034FA600504B25 /* AFURLResponseSerialization.m */; };
 		4FCD536218034FA600504B25 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD535918034FA600504B25 /* AFURLSessionManager.m */; };
+		4FCD53661803500C00504B25 /* SPConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD53651803500C00504B25 /* SPConnectionManager.m */; };
+		4FCD5368180358A500504B25 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FCD5367180358A500504B25 /* AdSupport.framework */; };
+		4FCD536B18036C3500504B25 /* NSString+SHA1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD536A18036C3500504B25 /* NSString+SHA1.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,11 @@
 		4FCD535718034FA600504B25 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		4FCD535818034FA600504B25 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		4FCD535918034FA600504B25 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		4FCD53641803500C00504B25 /* SPConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPConnectionManager.h; path = Connection/SPConnectionManager.h; sourceTree = "<group>"; };
+		4FCD53651803500C00504B25 /* SPConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPConnectionManager.m; path = Connection/SPConnectionManager.m; sourceTree = "<group>"; };
+		4FCD5367180358A500504B25 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		4FCD536918036C3500504B25 /* NSString+SHA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SHA1.h"; sourceTree = "<group>"; };
+		4FCD536A18036C3500504B25 /* NSString+SHA1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHA1.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FCD5368180358A500504B25 /* AdSupport.framework in Frameworks */,
 				4FCD52F51803173700504B25 /* CoreGraphics.framework in Frameworks */,
 				4FCD52F91803173700504B25 /* CoreData.framework in Frameworks */,
 				4FCD52F71803173700504B25 /* UIKit.framework in Frameworks */,
@@ -152,6 +161,7 @@
 		4FCD52F11803173700504B25 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4FCD5367180358A500504B25 /* AdSupport.framework */,
 				4FCD52F21803173700504B25 /* Foundation.framework */,
 				4FCD52F41803173700504B25 /* CoreGraphics.framework */,
 				4FCD52F61803173700504B25 /* UIKit.framework */,
@@ -164,6 +174,7 @@
 		4FCD52FA1803173700504B25 /* SponsorPay */ = {
 			isa = PBXGroup;
 			children = (
+				4FCD536318034FD500504B25 /* Connection */,
 				4FCD5340180329F200504B25 /* Views */,
 				4FCD53391803250F00504B25 /* Utils */,
 				4FCD5336180321BB00504B25 /* Resources */,
@@ -252,6 +263,8 @@
 				4FCD533B1803250F00504B25 /* UIColor+hex.m */,
 				4FCD533C1803250F00504B25 /* UIFont+helvetica.h */,
 				4FCD533D1803250F00504B25 /* UIFont+helvetica.m */,
+				4FCD536918036C3500504B25 /* NSString+SHA1.h */,
+				4FCD536A18036C3500504B25 /* NSString+SHA1.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -297,6 +310,15 @@
 				4FCD535918034FA600504B25 /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		4FCD536318034FD500504B25 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				4FCD53641803500C00504B25 /* SPConnectionManager.h */,
+				4FCD53651803500C00504B25 /* SPConnectionManager.m */,
+			);
+			name = Connection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +424,7 @@
 				4FCD533E1803250F00504B25 /* UIColor+hex.m in Sources */,
 				4FCD535F18034FA600504B25 /* AFURLConnectionOperation.m in Sources */,
 				4FCD535A18034FA600504B25 /* AFHTTPRequestOperation.m in Sources */,
+				4FCD536B18036C3500504B25 /* NSString+SHA1.m in Sources */,
 				4FCD535C18034FA600504B25 /* AFHTTPSessionManager.m in Sources */,
 				4FCD536018034FA600504B25 /* AFURLRequestSerialization.m in Sources */,
 				4FCD533518031DCE00504B25 /* SPMainPadViewController.m in Sources */,
@@ -409,6 +432,7 @@
 				4FCD533F1803250F00504B25 /* UIFont+helvetica.m in Sources */,
 				4FCD535B18034FA600504B25 /* AFHTTPRequestOperationManager.m in Sources */,
 				4FCD53011803173700504B25 /* main.m in Sources */,
+				4FCD53661803500C00504B25 /* SPConnectionManager.m in Sources */,
 				4FCD536118034FA600504B25 /* AFURLResponseSerialization.m in Sources */,
 				4FCD533218031DB100504B25 /* SPMainPhoneViewController.m in Sources */,
 				4FCD532A180318F800504B25 /* SPMainController.m in Sources */,

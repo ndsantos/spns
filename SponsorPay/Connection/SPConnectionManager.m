@@ -1,0 +1,106 @@
+//
+//  SPConnectionManager.m
+//  SponsorPay
+//
+//  Created by Nuno Santos on 10/7/13.
+//  Copyright (c) 2013 HappinessProvider. All rights reserved.
+//
+
+#import "SPConnectionManager.h"
+
+@implementation SPConnectionManager
+
+
++ (SPConnectionManager*)sharedInstance
+{
+    static dispatch_once_t onceToken;
+    static SPConnectionManager *singleton;
+    
+    dispatch_once(&onceToken, ^{
+        singleton = [[SPConnectionManager alloc] init];
+    });
+    
+    return singleton;
+}
+
+#pragma mark properties
+
+- (NSString *)ipAddress
+{
+    NSString *address = @"error";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0) {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while (temp_addr != NULL) {
+            if( temp_addr->ifa_addr->sa_family == AF_INET) {
+                // Check if interface is en0 which is the wifi connection on the iPhone
+                if ([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
+                    // Get NSString from C String
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    
+    // Free memory
+    freeifaddrs(interfaces);
+    
+    return address;
+}
+
+-(NSString *)locale{
+    return [NSLocale preferredLanguages][0];
+}
+
+-(NSString *)offerTypes{
+    return @"112";
+}
+
+-(NSString *)deviceId{
+    return [[ASIdentifierManager sharedManager] advertisingIdentifier].UUIDString;
+}
+
+#pragma mark requests
+-(void)getServerContentForUserId:(NSString *)userId withApiKey:(NSString *)apiKey withAppId:(NSString *)appId withCustomParams:(NSString *)customParams withSuccessBlock:(void (^)(NSArray *))successBlock withFailureBlock:(void (^)(NSString *))errorBlock{
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:userId, kParameterNameUserId, appId, kParameterNameAppId, customParams, kParameterNameCustom, self.ipAddress, kParameterNameIP, self.locale, kParameterNameLocale, self.offerTypes, kParameterNameOfferTypes, self.deviceId, kParameterNameDeviceId,  nil];
+    
+    
+    
+    
+    
+}
+
+
+#pragma mark processes
+-(NSString *)hashkeyFromParams:(NSDictionary *)params withApiKey:(NSString *)apiKey{
+    
+    // Get all request parameters and their values (except hashkey)
+    NSArray *requestParameters = params.allKeys;
+    
+    //Order theses pairs alphabetically by parameter name
+    NSArray *sortedParameters = [requestParameters sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+
+    
+    NSMutableString *orderedPairs = [[NSMutableString alloc] init];
+    for(NSString *parameter in sortedParameters){
+        [orderedPairs appendFormat:@"%@=%@&", parameter, params[parameter]];
+    }
+    
+    
+    //Concatenate the resulting string with & and the API Key handed out to you by SponsorPay
+    [orderedPairs appendString:apiKey];
+    
+    //Hash the whole resulting string, using SHA1. The resulting hashkey is then appended to the request as a separate parameter.
+    
+    return orderedPairs.sha1String;
+}
+@end
