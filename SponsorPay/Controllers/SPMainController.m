@@ -21,21 +21,21 @@
 -(BOOL)validateForm{
     if([((UITextField*)[self.view viewWithTag:kTagUserIdTextField]).text isEqualToString:@""]){
         [self showError:NSLocalizedString(@"User ID is mandatory",@"User ID is mandatory")];
-        return YES;
+        return NO;
     }
     
     
     if([((UITextField*)[self.view viewWithTag:kTagApiKeyTextField]).text isEqualToString:@""]){
         [self showError:NSLocalizedString(@"Api Key is mandatory",@"Api Key is mandatory")];
-        return YES;
+        return NO;
     }
     
     if([((UITextField*)[self.view viewWithTag:kTagAppIdTextField]).text isEqualToString:@""]){
         [self showError:NSLocalizedString(@"App ID is mandatory",@"App ID is mandatory")];
-        return YES;
+        return NO;
     }
     
-    return NO;
+    return YES;
 }
 
 -(void)showError:(NSString *)errorMessage{
@@ -48,7 +48,15 @@
     if([self validateForm]){
         
         //request
+        [[SPConnectionManager sharedInstance] getServerContentForUserId:((UITextField*)[self.view viewWithTag:kTagUserIdTextField]).text
+    withApiKey:((UITextField*)[self.view viewWithTag:kTagApiKeyTextField]).text
+    withAppId:((UITextField*)[self.view viewWithTag:kTagAppIdTextField]).text
+    withCustomParams:((UITextField*)[self.view viewWithTag:kTagCustomTextField]).text
+    withSuccessBlock:^(NSArray *content) {
         
+    } withFailureBlock:^(NSString *errorMsg) {
+        [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Server error", @"Server error") message:errorMsg delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", @"ok").uppercaseString otherButtonTitles:nil] show];
+    }];
         
     }
 }

@@ -14,6 +14,7 @@
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 #import <AdSupport/AdSupport.h>
+#import "AFNetworking.h"
 
 
 #define kURLBase @"http://api.sponsorpay.com/feed/v1/offers.json?"
@@ -30,6 +31,9 @@
 #define kParameterNameHashkey               @"hashkey"
 #define kParameterNamePage                  @"page"
 
+
+#define kResponseParameterMessage           @"message"
+
 @interface SPConnectionManager : NSObject
 
 + (SPConnectionManager*)sharedInstance;
@@ -44,9 +48,11 @@
 // 1. mount all the params
 // 2. generate hashkey
 // 3. parse content
--(void) getServerContentForUserId:(NSString*) userId withApiKey:(NSString*) apiKey withAppId:(NSString*) appId withCustomParams:(NSString*) customParams withSuccessBlock:(void (^)(NSArray *))successBlock withFailureBlock:(void (^)(NSString *))errorBlock;
+-(void)getServerContentForUserId:(NSString *)userId withApiKey:(NSString *)apiKey withAppId:(NSString *)appId withCustomParams:(NSString *)customParams withSuccessBlock:(void (^)(NSArray *content))successBlock withFailureBlock:(void (^)(NSString *errorMsg))errorBlock;
 
 
 -(NSString *) hashkeyFromParams:(NSDictionary*) params withApiKey:(NSString *) apiKey;
+
+-(NSURL*) urlFromParams:(NSDictionary*) params;
 
 @end

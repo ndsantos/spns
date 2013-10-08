@@ -14,6 +14,8 @@ This class is responsible for:
  3 - in case the success,  navigate to a new controller
 
 */
+#import <UIKit/UIKit.h>
+#import "SPConnectionManager.h"
 
 #define kTagUserIdTextField     3423
 #define kTagApiKeyTextField     3424
@@ -24,7 +26,6 @@ This class is responsible for:
 #define kDefaultApiKey              @"1c915e3b5d42d05136185030892fbb846c278927"
 #define kDefaultUserId              @"spiderman"
 
-#import <UIKit/UIKit.h>
 
 @interface SPMainController : UIViewController
 

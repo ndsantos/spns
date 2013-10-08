@@ -7,9 +7,19 @@
 //
 
 #import "SPConnectionManager.h"
+@interface SPConnectionManager(){
+    NSOperationQueue *_connectionOperationQueue;
+}
+@end
 
 @implementation SPConnectionManager
 
+-(id)init{
+    if(self = [super init]){
+        _connectionOperationQueue = [[NSOperationQueue alloc] init];
+    }
+    return self;
+}
 
 + (SPConnectionManager*)sharedInstance
 {
@@ -69,10 +79,41 @@
 }
 
 #pragma mark requests
--(void)getServerContentForUserId:(NSString *)userId withApiKey:(NSString *)apiKey withAppId:(NSString *)appId withCustomParams:(NSString *)customParams withSuccessBlock:(void (^)(NSArray *))successBlock withFailureBlock:(void (^)(NSString *))errorBlock{
+-(void)getServerContentForUserId:(NSString *)userId withApiKey:(NSString *)apiKey withAppId:(NSString *)appId withCustomParams:(NSString *)customParams withSuccessBlock:(void (^)(NSArray *content))successBlock withFailureBlock:(void (^)(NSString *errorMsg))errorBlock{
     
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:userId, kParameterNameUserId, appId, kParameterNameAppId, customParams, kParameterNameCustom, self.ipAddress, kParameterNameIP, self.locale, kParameterNameLocale, self.offerTypes, kParameterNameOfferTypes, self.deviceId, kParameterNameDeviceId,  nil];
     
+    //prepare parameters
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:userId, kParameterNameUserId, appId, kParameterNameAppId, self.ipAddress, kParameterNameIP, self.locale, kParameterNameLocale, self.offerTypes, kParameterNameOfferTypes, self.deviceId, kParameterNameDeviceId,  nil];
+    
+    if(![customParams isEqualToString:@""]){
+        [params setValue:customParams forKey:kParameterNameCustom];
+    }
+    [params setValue:[self hashkeyFromParams:params withApiKey:apiKey] forKey:kParameterNameHashkey];
+    
+    
+    // create request
+    NSURL *url = [self urlFromParams:params];
+    NSLog(@"%@", url);
+    AFHTTPRequestOperation *request = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:url]];
+    
+    //set serializer to json
+    request.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    
+    [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSString *errorMsg = error.localizedDescription;
+        if(operation.responseData!=nil){
+            NSError *errorJSON;
+            NSDictionary *response = [NSJSONSerialization JSONObjectWithData:operation.responseData options:kNilOptions error:&errorJSON];
+            errorMsg = response[kResponseParameterMessage];
+        }
+        errorBlock(errorMsg);
+        
+    }];
+    
+    [_connectionOperationQueue addOperation:request];
     
     
     
@@ -102,5 +143,15 @@
     //Hash the whole resulting string, using SHA1. The resulting hashkey is then appended to the request as a separate parameter.
     
     return orderedPairs.sha1String;
+}
+
+
+-(NSURL *)urlFromParams:(NSDictionary *)params{
+    NSMutableString *orderedPairs = [[NSMutableString alloc] init];
+    for(NSString *parameterName in params.allKeys){
+        [orderedPairs appendFormat:@"%@=%@&", parameterName, params[parameterName]];
+    }
+    NSString *parametersString = [orderedPairs substringToIndex:orderedPairs.length-1];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kURLBase, parametersString]];
 }
 @end
