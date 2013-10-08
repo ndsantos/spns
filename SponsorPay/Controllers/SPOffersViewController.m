@@ -48,6 +48,7 @@ static NSString *offerCellId = @"OfferCellId";
     
     _collectionView.dataSource = self;
     
+    _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:_collectionView];
     
     _collectionView.backgroundColor = [UIColor colorWithHexString:@"e1e1e1"];

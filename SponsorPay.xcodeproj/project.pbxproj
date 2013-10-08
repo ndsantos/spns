@@ -50,6 +50,16 @@
 		4FCD53801804202300504B25 /* SPOffersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD537F1804202300504B25 /* SPOffersViewController.m */; };
 		4FCD53831804216D00504B25 /* SPOffersPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD53821804216D00504B25 /* SPOffersPhoneViewController.m */; };
 		4FF36B5B18042988009D664B /* SPOfferPhoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B5A18042988009D664B /* SPOfferPhoneCell.m */; };
+		4FF36B6C180430BB009D664B /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B5E180430BB009D664B /* AFNetworkActivityIndicatorManager.m */; };
+		4FF36B6D180430BB009D664B /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B60180430BB009D664B /* UIActivityIndicatorView+AFNetworking.m */; };
+		4FF36B6E180430BB009D664B /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B62180430BB009D664B /* UIAlertView+AFNetworking.m */; };
+		4FF36B6F180430BB009D664B /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B64180430BB009D664B /* UIButton+AFNetworking.m */; };
+		4FF36B70180430BB009D664B /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B66180430BB009D664B /* UIImageView+AFNetworking.m */; };
+		4FF36B71180430BB009D664B /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B69180430BB009D664B /* UIProgressView+AFNetworking.m */; };
+		4FF36B72180430BB009D664B /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B6B180430BB009D664B /* UIWebView+AFNetworking.m */; };
+		4FF36B751804388F009D664B /* SPNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B741804388F009D664B /* SPNavigationViewController.m */; };
+		4FF36B7818044338009D664B /* SPSponsorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B7718044338009D664B /* SPSponsorCell.m */; };
+		4FF36B7B1804434A009D664B /* SPFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B7A1804434A009D664B /* SPFormCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +146,27 @@
 		4FF36B5718042959009D664B /* SPOffersCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPOffersCellProtocol.h; path = Views/SPOffersCellProtocol.h; sourceTree = "<group>"; };
 		4FF36B5918042988009D664B /* SPOfferPhoneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPOfferPhoneCell.h; path = Views/iPhone/SPOfferPhoneCell.h; sourceTree = "<group>"; };
 		4FF36B5A18042988009D664B /* SPOfferPhoneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPOfferPhoneCell.m; path = Views/iPhone/SPOfferPhoneCell.m; sourceTree = "<group>"; };
+		4FF36B5D180430BB009D664B /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		4FF36B5E180430BB009D664B /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		4FF36B5F180430BB009D664B /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		4FF36B60180430BB009D664B /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		4FF36B61180430BB009D664B /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		4FF36B62180430BB009D664B /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		4FF36B63180430BB009D664B /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		4FF36B64180430BB009D664B /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		4FF36B65180430BB009D664B /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		4FF36B66180430BB009D664B /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		4FF36B67180430BB009D664B /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		4FF36B68180430BB009D664B /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		4FF36B69180430BB009D664B /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		4FF36B6A180430BB009D664B /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		4FF36B6B180430BB009D664B /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		4FF36B731804388F009D664B /* SPNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPNavigationViewController.h; path = Controllers/SPNavigationViewController.h; sourceTree = "<group>"; };
+		4FF36B741804388F009D664B /* SPNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPNavigationViewController.m; path = Controllers/SPNavigationViewController.m; sourceTree = "<group>"; };
+		4FF36B7618044338009D664B /* SPSponsorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPSponsorCell.h; path = Views/SPSponsorCell.h; sourceTree = "<group>"; };
+		4FF36B7718044338009D664B /* SPSponsorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPSponsorCell.m; path = Views/SPSponsorCell.m; sourceTree = "<group>"; };
+		4FF36B791804434A009D664B /* SPFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPFormCell.h; sourceTree = "<group>"; };
+		4FF36B7A1804434A009D664B /* SPFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPFormCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +285,8 @@
 				4FCD5329180318F800504B25 /* SPMainController.m */,
 				4FCD537E1804202300504B25 /* SPOffersViewController.h */,
 				4FCD537F1804202300504B25 /* SPOffersViewController.m */,
+				4FF36B731804388F009D664B /* SPNavigationViewController.h */,
+				4FF36B741804388F009D664B /* SPNavigationViewController.m */,
 			);
 			name = Contollers;
 			sourceTree = "<group>";
@@ -309,6 +342,10 @@
 				4FCD534118032A4E00504B25 /* SPCustomTextField.h */,
 				4FCD534218032A4E00504B25 /* SPCustomTextField.m */,
 				4FF36B5718042959009D664B /* SPOffersCellProtocol.h */,
+				4FF36B7618044338009D664B /* SPSponsorCell.h */,
+				4FF36B7718044338009D664B /* SPSponsorCell.m */,
+				4FF36B791804434A009D664B /* SPFormCell.h */,
+				4FF36B7A1804434A009D664B /* SPFormCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -316,6 +353,7 @@
 		4FCD534518034FA600504B25 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				4FF36B5C180430BB009D664B /* UIKit+AFNetworking */,
 				4FCD534618034FA600504B25 /* AFNetworking */,
 			);
 			path = ThirdParty;
@@ -380,6 +418,28 @@
 				4FF36B5A18042988009D664B /* SPOfferPhoneCell.m */,
 			);
 			name = iPhone;
+			sourceTree = "<group>";
+		};
+		4FF36B5C180430BB009D664B /* UIKit+AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				4FF36B5D180430BB009D664B /* AFNetworkActivityIndicatorManager.h */,
+				4FF36B5E180430BB009D664B /* AFNetworkActivityIndicatorManager.m */,
+				4FF36B5F180430BB009D664B /* UIActivityIndicatorView+AFNetworking.h */,
+				4FF36B60180430BB009D664B /* UIActivityIndicatorView+AFNetworking.m */,
+				4FF36B61180430BB009D664B /* UIAlertView+AFNetworking.h */,
+				4FF36B62180430BB009D664B /* UIAlertView+AFNetworking.m */,
+				4FF36B63180430BB009D664B /* UIButton+AFNetworking.h */,
+				4FF36B64180430BB009D664B /* UIButton+AFNetworking.m */,
+				4FF36B65180430BB009D664B /* UIImageView+AFNetworking.h */,
+				4FF36B66180430BB009D664B /* UIImageView+AFNetworking.m */,
+				4FF36B67180430BB009D664B /* UIKit+AFNetworking.h */,
+				4FF36B68180430BB009D664B /* UIProgressView+AFNetworking.h */,
+				4FF36B69180430BB009D664B /* UIProgressView+AFNetworking.m */,
+				4FF36B6A180430BB009D664B /* UIWebView+AFNetworking.h */,
+				4FF36B6B180430BB009D664B /* UIWebView+AFNetworking.m */,
+			);
+			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,18 +540,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF36B7B1804434A009D664B /* SPFormCell.m in Sources */,
 				4FCD535E18034FA600504B25 /* AFSecurityPolicy.m in Sources */,
 				4FCD534318032A4E00504B25 /* SPCustomTextField.m in Sources */,
 				4FCD53801804202300504B25 /* SPOffersViewController.m in Sources */,
 				4FCD535D18034FA600504B25 /* AFNetworkReachabilityManager.m in Sources */,
 				4FCD53771804109400504B25 /* SPInformation.m in Sources */,
 				4FCD533E1803250F00504B25 /* UIColor+hex.m in Sources */,
+				4FF36B6F180430BB009D664B /* UIButton+AFNetworking.m in Sources */,
+				4FF36B6D180430BB009D664B /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				4FF36B71180430BB009D664B /* UIProgressView+AFNetworking.m in Sources */,
 				4FCD53711804105300504B25 /* SPServerResponseObject.m in Sources */,
 				4FCD53741804108500504B25 /* SPOffer.m in Sources */,
 				4FCD535F18034FA600504B25 /* AFURLConnectionOperation.m in Sources */,
 				4FCD537D1804173300504B25 /* SPTimeToPayout.m in Sources */,
 				4FCD535A18034FA600504B25 /* AFHTTPRequestOperation.m in Sources */,
 				4FCD536B18036C3500504B25 /* NSString+SHA1.m in Sources */,
+				4FF36B6C180430BB009D664B /* AFNetworkActivityIndicatorManager.m in Sources */,
+				4FF36B6E180430BB009D664B /* UIAlertView+AFNetworking.m in Sources */,
+				4FF36B72180430BB009D664B /* UIWebView+AFNetworking.m in Sources */,
 				4FCD53831804216D00504B25 /* SPOffersPhoneViewController.m in Sources */,
 				4FCD535C18034FA600504B25 /* AFHTTPSessionManager.m in Sources */,
 				4FCD536018034FA600504B25 /* AFURLRequestSerialization.m in Sources */,
@@ -503,10 +570,13 @@
 				4FF36B5B18042988009D664B /* SPOfferPhoneCell.m in Sources */,
 				4FCD53661803500C00504B25 /* SPConnectionManager.m in Sources */,
 				4FCD536118034FA600504B25 /* AFURLResponseSerialization.m in Sources */,
+				4FF36B751804388F009D664B /* SPNavigationViewController.m in Sources */,
 				4FCD533218031DB100504B25 /* SPMainPhoneViewController.m in Sources */,
 				4FCD532A180318F800504B25 /* SPMainController.m in Sources */,
 				4FCD53051803173700504B25 /* SPAppDelegate.m in Sources */,
 				4FCD53081803173700504B25 /* SponsorPay.xcdatamodeld in Sources */,
+				4FF36B7818044338009D664B /* SPSponsorCell.m in Sources */,
+				4FF36B70180430BB009D664B /* UIImageView+AFNetworking.m in Sources */,
 				4FCD537A1804171B00504B25 /* SPOfferType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

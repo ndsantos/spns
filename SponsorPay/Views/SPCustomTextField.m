@@ -28,11 +28,12 @@
         UIFont *defaultStringFont = [UIFont boldHelveticaWithSize:9];
         NSString *defaultString = NSLocalizedString(@"default", @"default").uppercaseString;
         CGSize defaultTextSize = [defaultString sizeWithAttributes:[NSDictionary dictionaryWithObject:defaultStringFont forKey:NSFontAttributeName]];
-        _defaultButon = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - defaultTextSize.width, 5, defaultTextSize.width, 15)];
+        _defaultButon = [[UIButton alloc] initWithFrame:CGRectMake(frame.size.width - defaultTextSize.width-5, 5, defaultTextSize.width+5, 15)];
         [_defaultButon setTitle:defaultString forState:UIControlStateNormal];
         [_defaultButon setTitleColor:[UIColor colorWithHexString:@"070707"] forState:UIControlStateNormal];
         [_defaultButon addTarget:self action:@selector(setDefaultText) forControlEvents:UIControlEventTouchUpInside];
         _defaultButon.hidden = YES;
+        _defaultButon.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
         _defaultButon.titleLabel.font = defaultStringFont;
         [self addSubview:_defaultButon];
         

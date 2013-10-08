@@ -26,13 +26,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+	
+}
+
+-(void)viewWillAppear:(BOOL)animated{
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*) self.collectionView.collectionViewLayout;
     
-    layout.itemSize = CGSizeMake(self.view.bounds.size.width, 70);
+    layout.itemSize = CGSizeMake(self.view.bounds.size.width, 100);
     layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 2;
-	
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +46,20 @@
 
 -(Class)cellClass{
     return [SPOfferPhoneCell class];
+}
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+    
+    
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*) self.collectionView.collectionViewLayout;
+    
+    if(UIInterfaceOrientationIsPortrait(toInterfaceOrientation)){
+        layout.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, layout.itemSize.height);
+    } else {
+        layout.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.height, layout.itemSize.height);
+    }
+    
+    
 }
 
 @end

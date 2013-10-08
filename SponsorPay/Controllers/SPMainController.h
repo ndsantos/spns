@@ -15,19 +15,11 @@ This class is responsible for:
 
 */
 #import <UIKit/UIKit.h>
+#import "SPSponsorCell.h"
+#import "SPFormCell.h"
 
 
-#define kTagUserIdTextField     3423
-#define kTagApiKeyTextField     3424
-#define kTagAppIdTextField      3425
-#define kTagCustomTextField     3426
-
-#define kDefaultAppId               @"2070"
-#define kDefaultApiKey              @"1c915e3b5d42d05136185030892fbb846c278927"
-#define kDefaultUserId              @"spiderman"
-
-
-@interface SPMainController : UIViewController
+@interface SPMainController : UIViewController<UICollectionViewDataSource, SPFormCellDelegate>
 
 -(void) requestDataFromServer;
 -(BOOL) validateForm;
@@ -35,4 +27,9 @@ This class is responsible for:
 -(void) showError:(NSString*) errorMessage;
 
 -(void) showOffersControllerWithOffers:(NSArray*) offers;
+
+
+
+-(void) keyboardWillShow:(NSNotification*) notification;
+-(void) keyboardWillHide:(NSNotification *)notification;
 @end

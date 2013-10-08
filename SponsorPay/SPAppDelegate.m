@@ -10,6 +10,7 @@
 #import "SPMainController.h"
 #import "SPMainPadViewController.h"
 #import "SPMainPhoneViewController.h"
+#import "SPNavigationViewController.h"
 
 @implementation SPAppDelegate
 
@@ -23,7 +24,7 @@
     
 
     //create and assign navigation
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithNibName:nil bundle:nil];
+    SPNavigationViewController *navigationController = [[SPNavigationViewController alloc] initWithNibName:nil bundle:nil];
     self.window.rootViewController = navigationController;
     navigationController.navigationBar.translucent = NO;
     
