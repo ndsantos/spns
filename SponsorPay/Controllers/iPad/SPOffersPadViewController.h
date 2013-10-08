@@ -1,15 +1,13 @@
 //
-//  SPOffersPhoneViewController.h
+//  SPOffersPadViewController.h
 //  SponsorPay
 //
 //  Created by Nuno Santos on 10/8/13.
 //  Copyright (c) 2013 HappinessProvider. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "SPOffersViewController.h"
-#import "SPOfferCell.h"
 
-@interface SPOffersPhoneViewController : SPOffersViewController
+@interface SPOffersPadViewController : SPOffersViewController
 
 @end

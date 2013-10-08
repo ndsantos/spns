@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "SPOffersCellProtocol.h"
 
-@interface SPOfferPhoneCell : UICollectionViewCell<SPOffersCellProtocol>
+@interface SPOfferCell : UICollectionViewCell<SPOffersCellProtocol>
 
 @end

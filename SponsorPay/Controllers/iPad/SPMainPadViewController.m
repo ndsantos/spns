@@ -7,6 +7,7 @@
 //
 
 #import "SPMainPadViewController.h"
+#import "SPOffersPadViewController.h"
 
 @interface SPMainPadViewController ()
 
@@ -33,6 +34,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)showOffersControllerWithOffers:(NSArray *)offers{
+    SPOffersPadViewController *offersController = [[SPOffersPadViewController alloc] initWithOffers:offers];
+    [self.navigationController pushViewController:offersController animated:YES];
 }
 
 @end

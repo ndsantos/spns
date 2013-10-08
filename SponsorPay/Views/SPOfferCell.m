@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 HappinessProvider. All rights reserved.
 //
 
-#import "SPOfferPhoneCell.h"
+#import "SPOfferCell.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface SPOfferPhoneCell(){
+@interface SPOfferCell(){
     UIImageView *_thumbnailImageView;
     
     UILabel *_titleLabel;
@@ -18,7 +18,7 @@
 }
 
 @end
-@implementation SPOfferPhoneCell
+@implementation SPOfferCell
 
 - (id)initWithFrame:(CGRect)frame
 {
