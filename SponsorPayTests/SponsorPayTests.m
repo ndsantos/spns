@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "SPConnectionManager.h"
+#import "SPOffersPhoneViewController.h"
 
 
 @interface SponsorPayTests : XCTestCase
@@ -54,7 +55,12 @@
     XCTAssertTrue([hashkey isEqualToString:expectedResponse], @"problem in algorithm");
 }
 
-
+-(void) testCellClass{
+    SPOffersPhoneViewController *offersPhoneController = [[SPOffersPhoneViewController alloc] init];
+    
+    XCTAssertNotNil(offersPhoneController.cellClass, @"Missing implementation of mandatory method in subclasses");
+    
+}
 
 
 @end

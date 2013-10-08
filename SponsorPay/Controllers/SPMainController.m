@@ -7,6 +7,7 @@
 //
 
 #import "SPMainController.h"
+#import "SPConnectionManager.h"
 
 @implementation SPMainController
 
@@ -52,12 +53,19 @@
     withApiKey:((UITextField*)[self.view viewWithTag:kTagApiKeyTextField]).text
     withAppId:((UITextField*)[self.view viewWithTag:kTagAppIdTextField]).text
     withCustomParams:((UITextField*)[self.view viewWithTag:kTagCustomTextField]).text
-    withSuccessBlock:^(NSArray *content) {
+    withSuccessBlock:^(SPServerResponseObject *content) {
+        
+        [self showOffersControllerWithOffers:content.offers];
         
     } withFailureBlock:^(NSString *errorMsg) {
         [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Server error", @"Server error") message:errorMsg delegate:nil cancelButtonTitle:NSLocalizedString(@"ok", @"ok").uppercaseString otherButtonTitles:nil] show];
     }];
         
     }
+}
+
+
+//implemented by subclasses
+-(void)showOffersControllerWithOffers:(NSArray *)offers{
 }
 @end

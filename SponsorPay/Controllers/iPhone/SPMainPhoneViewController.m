@@ -7,6 +7,7 @@
 //
 
 #import "SPMainPhoneViewController.h"
+#import "SPOffersPhoneViewController.h"
 
 @interface SPMainPhoneViewController (){
     UIScrollView *_mainScrollView;
@@ -178,6 +179,7 @@
         _mainScrollView.contentSize = self.view.bounds.size;
     }];
     
+    
     //show hide keyboard button
     //UIBarButtonItem *hideKeyboard = [UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"keyboard_hide.png"] style:UIBarButtonItemStylePlain target:self.view action:<#(SEL)#>
     //self.navigationItem.rightBarButtonItem
@@ -230,6 +232,14 @@
     return YES;
 }
 
+
+#pragma mark navigation
+
+-(void)showOffersControllerWithOffers:(NSArray *)offers{
+    SPOffersPhoneViewController *offersController = [[SPOffersPhoneViewController alloc] initWithOffers:offers];
+    [self.navigationController pushViewController:offersController animated:YES];
+    
+}
 
 
 @end

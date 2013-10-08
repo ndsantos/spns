@@ -47,6 +47,9 @@
 		4FCD53771804109400504B25 /* SPInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD53761804109400504B25 /* SPInformation.m */; };
 		4FCD537A1804171B00504B25 /* SPOfferType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD53791804171B00504B25 /* SPOfferType.m */; };
 		4FCD537D1804173300504B25 /* SPTimeToPayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD537C1804173300504B25 /* SPTimeToPayout.m */; };
+		4FCD53801804202300504B25 /* SPOffersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD537F1804202300504B25 /* SPOffersViewController.m */; };
+		4FCD53831804216D00504B25 /* SPOffersPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD53821804216D00504B25 /* SPOffersPhoneViewController.m */; };
+		4FF36B5B18042988009D664B /* SPOfferPhoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B5A18042988009D664B /* SPOfferPhoneCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +129,13 @@
 		4FCD53791804171B00504B25 /* SPOfferType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOfferType.m; sourceTree = "<group>"; };
 		4FCD537B1804173300504B25 /* SPTimeToPayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTimeToPayout.h; sourceTree = "<group>"; };
 		4FCD537C1804173300504B25 /* SPTimeToPayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTimeToPayout.m; sourceTree = "<group>"; };
+		4FCD537E1804202300504B25 /* SPOffersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPOffersViewController.h; path = Controllers/SPOffersViewController.h; sourceTree = "<group>"; };
+		4FCD537F1804202300504B25 /* SPOffersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPOffersViewController.m; path = Controllers/SPOffersViewController.m; sourceTree = "<group>"; };
+		4FCD53811804216D00504B25 /* SPOffersPhoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOffersPhoneViewController.h; sourceTree = "<group>"; };
+		4FCD53821804216D00504B25 /* SPOffersPhoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOffersPhoneViewController.m; sourceTree = "<group>"; };
+		4FF36B5718042959009D664B /* SPOffersCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SPOffersCellProtocol.h; path = Views/SPOffersCellProtocol.h; sourceTree = "<group>"; };
+		4FF36B5918042988009D664B /* SPOfferPhoneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPOfferPhoneCell.h; path = Views/iPhone/SPOfferPhoneCell.h; sourceTree = "<group>"; };
+		4FF36B5A18042988009D664B /* SPOfferPhoneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPOfferPhoneCell.m; path = Views/iPhone/SPOfferPhoneCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +252,8 @@
 				4FCD532E18031D9300504B25 /* iPad */,
 				4FCD5328180318F800504B25 /* SPMainController.h */,
 				4FCD5329180318F800504B25 /* SPMainController.m */,
+				4FCD537E1804202300504B25 /* SPOffersViewController.h */,
+				4FCD537F1804202300504B25 /* SPOffersViewController.m */,
 			);
 			name = Contollers;
 			sourceTree = "<group>";
@@ -261,6 +273,8 @@
 			children = (
 				4FCD533018031DB100504B25 /* SPMainPhoneViewController.h */,
 				4FCD533118031DB100504B25 /* SPMainPhoneViewController.m */,
+				4FCD53811804216D00504B25 /* SPOffersPhoneViewController.h */,
+				4FCD53821804216D00504B25 /* SPOffersPhoneViewController.m */,
 			);
 			name = iPhone;
 			path = Controllers/iPhone;
@@ -291,8 +305,10 @@
 		4FCD5340180329F200504B25 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4FF36B581804295E009D664B /* iPhone */,
 				4FCD534118032A4E00504B25 /* SPCustomTextField.h */,
 				4FCD534218032A4E00504B25 /* SPCustomTextField.m */,
+				4FF36B5718042959009D664B /* SPOffersCellProtocol.h */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -355,6 +371,15 @@
 				4FCD537C1804173300504B25 /* SPTimeToPayout.m */,
 			);
 			name = Objects;
+			sourceTree = "<group>";
+		};
+		4FF36B581804295E009D664B /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				4FF36B5918042988009D664B /* SPOfferPhoneCell.h */,
+				4FF36B5A18042988009D664B /* SPOfferPhoneCell.m */,
+			);
+			name = iPhone;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +482,7 @@
 			files = (
 				4FCD535E18034FA600504B25 /* AFSecurityPolicy.m in Sources */,
 				4FCD534318032A4E00504B25 /* SPCustomTextField.m in Sources */,
+				4FCD53801804202300504B25 /* SPOffersViewController.m in Sources */,
 				4FCD535D18034FA600504B25 /* AFNetworkReachabilityManager.m in Sources */,
 				4FCD53771804109400504B25 /* SPInformation.m in Sources */,
 				4FCD533E1803250F00504B25 /* UIColor+hex.m in Sources */,
@@ -466,6 +492,7 @@
 				4FCD537D1804173300504B25 /* SPTimeToPayout.m in Sources */,
 				4FCD535A18034FA600504B25 /* AFHTTPRequestOperation.m in Sources */,
 				4FCD536B18036C3500504B25 /* NSString+SHA1.m in Sources */,
+				4FCD53831804216D00504B25 /* SPOffersPhoneViewController.m in Sources */,
 				4FCD535C18034FA600504B25 /* AFHTTPSessionManager.m in Sources */,
 				4FCD536018034FA600504B25 /* AFURLRequestSerialization.m in Sources */,
 				4FCD533518031DCE00504B25 /* SPMainPadViewController.m in Sources */,
@@ -473,6 +500,7 @@
 				4FCD533F1803250F00504B25 /* UIFont+helvetica.m in Sources */,
 				4FCD535B18034FA600504B25 /* AFHTTPRequestOperationManager.m in Sources */,
 				4FCD53011803173700504B25 /* main.m in Sources */,
+				4FF36B5B18042988009D664B /* SPOfferPhoneCell.m in Sources */,
 				4FCD53661803500C00504B25 /* SPConnectionManager.m in Sources */,
 				4FCD536118034FA600504B25 /* AFURLResponseSerialization.m in Sources */,
 				4FCD533218031DB100504B25 /* SPMainPhoneViewController.m in Sources */,

@@ -65,6 +65,7 @@
 
 #define kResponseParameterAmount            @"amount"
 
+@class SPServerResponseObject;
 
 @interface SPConnectionManager : NSObject
 
@@ -80,7 +81,7 @@
 // 1. mount all the params
 // 2. generate hashkey
 // 3. parse content
--(void)getServerContentForUserId:(NSString *)userId withApiKey:(NSString *)apiKey withAppId:(NSString *)appId withCustomParams:(NSString *)customParams withSuccessBlock:(void (^)(NSArray *content))successBlock withFailureBlock:(void (^)(NSString *errorMsg))errorBlock;
+-(void)getServerContentForUserId:(NSString *)userId withApiKey:(NSString *)apiKey withAppId:(NSString *)appId withCustomParams:(NSString *)customParams withSuccessBlock:(void (^)(SPServerResponseObject *content))successBlock withFailureBlock:(void (^)(NSString *errorMsg))errorBlock;
 
 
 -(NSString *) hashkeyFromParams:(NSDictionary*) params withApiKey:(NSString *) apiKey;

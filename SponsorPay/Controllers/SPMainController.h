@@ -15,7 +15,7 @@ This class is responsible for:
 
 */
 #import <UIKit/UIKit.h>
-#import "SPConnectionManager.h"
+
 
 #define kTagUserIdTextField     3423
 #define kTagApiKeyTextField     3424
@@ -34,4 +34,5 @@ This class is responsible for:
 
 -(void) showError:(NSString*) errorMessage;
 
+-(void) showOffersControllerWithOffers:(NSArray*) offers;
 @end

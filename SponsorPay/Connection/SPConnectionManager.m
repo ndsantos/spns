@@ -79,7 +79,7 @@
 }
 
 #pragma mark requests
--(void)getServerContentForUserId:(NSString *)userId withApiKey:(NSString *)apiKey withAppId:(NSString *)appId withCustomParams:(NSString *)customParams withSuccessBlock:(void (^)(NSArray *content))successBlock withFailureBlock:(void (^)(NSString *errorMsg))errorBlock{
+-(void)getServerContentForUserId:(NSString *)userId withApiKey:(NSString *)apiKey withAppId:(NSString *)appId withCustomParams:(NSString *)customParams withSuccessBlock:(void (^)(SPServerResponseObject *content))successBlock withFailureBlock:(void (^)(NSString *errorMsg))errorBlock{
     
     
     //prepare parameters
@@ -103,10 +103,15 @@
     [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         if([[NSString stringWithFormat:@"%@%@", operation.responseString, apiKey].sha1String isEqualToString:[operation.response.allHeaderFields valueForKey:@"X-Sponsorpay-Response-Signature"]]){
-
-            SPServerResponseObject *serverResponseObject = [[SPServerResponseObject alloc] initWithDictionary:responseObject];
             
-            NSLog(@"%@", responseObject);
+            NSError *errorFile;
+            NSData *fakeContent = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"fakeresponse" ofType:@"json"]];
+
+            NSDictionary *respDic = [NSJSONSerialization JSONObjectWithData:fakeContent options:kNilOptions error:&errorFile];
+            
+            SPServerResponseObject *serverResponseObject = [[SPServerResponseObject alloc] initWithDictionary:respDic];
+            
+            successBlock(serverResponseObject);
             
         } else {
             errorBlock(NSLocalizedString(@"Could not verify the content from server", @"Could not verify the content from server"));
