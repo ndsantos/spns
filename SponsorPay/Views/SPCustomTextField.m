@@ -69,6 +69,10 @@
     return bounds;
 }
 
+-(CGRect)editingRectForBounds:(CGRect)bounds{
+    return [self textRectForBounds:bounds];
+}
+
 -(void)setShowDefaultButton:(BOOL)showDefaultButton{
 
     _showDefaultButton = showDefaultButton;

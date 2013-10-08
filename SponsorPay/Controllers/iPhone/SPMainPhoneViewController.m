@@ -136,7 +136,7 @@
     goButton.backgroundColor = [UIColor colorWithHexString:@"d80100"];
     goButton.titleLabel.font = [UIFont lightHelveticaWithSize:15];
     [goButton addTarget:self action:@selector(requestDataFromServer) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:goButton];
+    [_mainScrollView addSubview:goButton];
     
     
     

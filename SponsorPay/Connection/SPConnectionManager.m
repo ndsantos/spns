@@ -88,6 +88,7 @@
     if(![customParams isEqualToString:@""]){
         [params setValue:customParams forKey:kParameterNameCustom];
     }
+    [params setValue:[NSString stringWithFormat:@"%i", (int)[NSDate date].timeIntervalSince1970] forKey:kParameterNameTimestamp];
     [params setValue:[self hashkeyFromParams:params withApiKey:apiKey] forKey:kParameterNameHashkey];
     
     
@@ -100,7 +101,17 @@
     request.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
     
     [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@", responseObject);
+        
+        if([[NSString stringWithFormat:@"%@%@", operation.responseString, apiKey].sha1String isEqualToString:[operation.response.allHeaderFields valueForKey:@"X-Sponsorpay-Response-Signature"]]){
+
+            
+            
+            NSLog(@"%@", responseObject);
+            
+        } else {
+            errorBlock(NSLocalizedString(@"Could not verify the content from server", @"Could not verify the content from server"));
+        }
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
         NSString *errorMsg = error.localizedDescription;
