@@ -104,7 +104,7 @@
         
         if([[NSString stringWithFormat:@"%@%@", operation.responseString, apiKey].sha1String isEqualToString:[operation.response.allHeaderFields valueForKey:@"X-Sponsorpay-Response-Signature"]]){
 
-            
+            SPServerResponseObject *serverResponseObject = [[SPServerResponseObject alloc] initWithDictionary:responseObject];
             
             NSLog(@"%@", responseObject);
             

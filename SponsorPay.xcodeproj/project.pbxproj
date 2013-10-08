@@ -41,6 +41,12 @@
 		4FCD53661803500C00504B25 /* SPConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD53651803500C00504B25 /* SPConnectionManager.m */; };
 		4FCD5368180358A500504B25 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FCD5367180358A500504B25 /* AdSupport.framework */; };
 		4FCD536B18036C3500504B25 /* NSString+SHA1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD536A18036C3500504B25 /* NSString+SHA1.m */; };
+		4FCD536D18040FA900504B25 /* fakeresponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 4FCD536C18040FA900504B25 /* fakeresponse.json */; };
+		4FCD53711804105300504B25 /* SPServerResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD53701804105300504B25 /* SPServerResponseObject.m */; };
+		4FCD53741804108500504B25 /* SPOffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD53731804108500504B25 /* SPOffer.m */; };
+		4FCD53771804109400504B25 /* SPInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD53761804109400504B25 /* SPInformation.m */; };
+		4FCD537A1804171B00504B25 /* SPOfferType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD53791804171B00504B25 /* SPOfferType.m */; };
+		4FCD537D1804173300504B25 /* SPTimeToPayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD537C1804173300504B25 /* SPTimeToPayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +115,17 @@
 		4FCD5367180358A500504B25 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		4FCD536918036C3500504B25 /* NSString+SHA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SHA1.h"; sourceTree = "<group>"; };
 		4FCD536A18036C3500504B25 /* NSString+SHA1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHA1.m"; sourceTree = "<group>"; };
+		4FCD536C18040FA900504B25 /* fakeresponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fakeresponse.json; sourceTree = "<group>"; };
+		4FCD536F1804105300504B25 /* SPServerResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPServerResponseObject.h; path = Objects/SPServerResponseObject.h; sourceTree = "<group>"; };
+		4FCD53701804105300504B25 /* SPServerResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPServerResponseObject.m; path = Objects/SPServerResponseObject.m; sourceTree = "<group>"; };
+		4FCD53721804108500504B25 /* SPOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPOffer.h; path = Objects/SPOffer.h; sourceTree = "<group>"; };
+		4FCD53731804108500504B25 /* SPOffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPOffer.m; path = Objects/SPOffer.m; sourceTree = "<group>"; };
+		4FCD53751804109400504B25 /* SPInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPInformation.h; sourceTree = "<group>"; };
+		4FCD53761804109400504B25 /* SPInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPInformation.m; sourceTree = "<group>"; };
+		4FCD53781804171B00504B25 /* SPOfferType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPOfferType.h; sourceTree = "<group>"; };
+		4FCD53791804171B00504B25 /* SPOfferType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOfferType.m; sourceTree = "<group>"; };
+		4FCD537B1804173300504B25 /* SPTimeToPayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPTimeToPayout.h; sourceTree = "<group>"; };
+		4FCD537C1804173300504B25 /* SPTimeToPayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPTimeToPayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +191,7 @@
 		4FCD52FA1803173700504B25 /* SponsorPay */ = {
 			isa = PBXGroup;
 			children = (
+				4FCD536E18040FDF00504B25 /* Objects */,
 				4FCD536318034FD500504B25 /* Connection */,
 				4FCD5340180329F200504B25 /* Views */,
 				4FCD53391803250F00504B25 /* Utils */,
@@ -252,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				4FCD5337180321BB00504B25 /* sponsorpay.png */,
+				4FCD536C18040FA900504B25 /* fakeresponse.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -319,6 +338,23 @@
 				4FCD53651803500C00504B25 /* SPConnectionManager.m */,
 			);
 			name = Connection;
+			sourceTree = "<group>";
+		};
+		4FCD536E18040FDF00504B25 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				4FCD536F1804105300504B25 /* SPServerResponseObject.h */,
+				4FCD53701804105300504B25 /* SPServerResponseObject.m */,
+				4FCD53721804108500504B25 /* SPOffer.h */,
+				4FCD53731804108500504B25 /* SPOffer.m */,
+				4FCD53751804109400504B25 /* SPInformation.h */,
+				4FCD53761804109400504B25 /* SPInformation.m */,
+				4FCD53781804171B00504B25 /* SPOfferType.h */,
+				4FCD53791804171B00504B25 /* SPOfferType.m */,
+				4FCD537B1804173300504B25 /* SPTimeToPayout.h */,
+				4FCD537C1804173300504B25 /* SPTimeToPayout.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,6 +436,7 @@
 				4FCD52FF1803173700504B25 /* InfoPlist.strings in Resources */,
 				4FCD530A1803173700504B25 /* Images.xcassets in Resources */,
 				4FCD5338180321BB00504B25 /* sponsorpay.png in Resources */,
+				4FCD536D18040FA900504B25 /* fakeresponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,8 +458,12 @@
 				4FCD535E18034FA600504B25 /* AFSecurityPolicy.m in Sources */,
 				4FCD534318032A4E00504B25 /* SPCustomTextField.m in Sources */,
 				4FCD535D18034FA600504B25 /* AFNetworkReachabilityManager.m in Sources */,
+				4FCD53771804109400504B25 /* SPInformation.m in Sources */,
 				4FCD533E1803250F00504B25 /* UIColor+hex.m in Sources */,
+				4FCD53711804105300504B25 /* SPServerResponseObject.m in Sources */,
+				4FCD53741804108500504B25 /* SPOffer.m in Sources */,
 				4FCD535F18034FA600504B25 /* AFURLConnectionOperation.m in Sources */,
+				4FCD537D1804173300504B25 /* SPTimeToPayout.m in Sources */,
 				4FCD535A18034FA600504B25 /* AFHTTPRequestOperation.m in Sources */,
 				4FCD536B18036C3500504B25 /* NSString+SHA1.m in Sources */,
 				4FCD535C18034FA600504B25 /* AFHTTPSessionManager.m in Sources */,
@@ -438,6 +479,7 @@
 				4FCD532A180318F800504B25 /* SPMainController.m in Sources */,
 				4FCD53051803173700504B25 /* SPAppDelegate.m in Sources */,
 				4FCD53081803173700504B25 /* SponsorPay.xcdatamodeld in Sources */,
+				4FCD537A1804171B00504B25 /* SPOfferType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

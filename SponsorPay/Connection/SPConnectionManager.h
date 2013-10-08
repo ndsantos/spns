@@ -15,6 +15,7 @@
 #include <arpa/inet.h>
 #import <AdSupport/AdSupport.h>
 #import "AFNetworking.h"
+#import "SPServerResponseObject.h"
 
 
 #define kURLBase @"http://api.sponsorpay.com/feed/v1/offers.json?"
@@ -33,6 +34,37 @@
 
 
 #define kResponseParameterMessage           @"message"
+#define kResponseParameterCode              @"code"
+#define kResponseParameterCount             @"count"
+#define kResponseParameterPages             @"pages"
+#define kResponseParameterInformation       @"information"
+
+#define kResponseParameterAppName           @"app_name"
+#define kResponseParameterAppID             @"appid"
+#define kResponseParameterVirtualCurrency   @"virtual_currency"
+#define kResponseParameterCountry           @"country"
+#define kResponseParameterLanguage          @"language"
+#define kResponseParameterSupportURL        @"support_url"
+
+#define kResponseParameterOffers            @"offers"
+#define kResponseParameterTitle             @"title"
+#define kResponseParameterOfferId           @"offer_id"
+#define kResponseParameterTeaser            @"teaser"
+#define kResponseParameterRequiredActions   @"required_actions"
+#define kResponseParameterLink              @"link"
+#define kResponseParameterOfferTypes        @"offer_types"
+#define kResponseParameterOfferTypeId       @"offer_type_id"
+#define kResponseParameterReadable          @"readable"
+
+#define kResponseParameterThumbnail         @"thumbnail"
+#define kResponseParameterLowRes            @"lowres"
+#define kResponseParameterHiRes             @"hires"
+
+#define kResponseParameterPayout            @"payout"
+#define kResponseParameterTimeToPayout      @"time_to_payout"
+
+#define kResponseParameterAmount            @"amount"
+
 
 @interface SPConnectionManager : NSObject
 
