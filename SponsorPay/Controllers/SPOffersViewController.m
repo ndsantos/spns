@@ -37,8 +37,12 @@ static NSString *offerCellId = @"OfferCellId";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	
     self.title = NSLocalizedString(@"Offers", @"Offers");
+    
+    
+    
     
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -52,6 +56,19 @@ static NSString *offerCellId = @"OfferCellId";
     [self.view addSubview:_collectionView];
     
     _collectionView.backgroundColor = [UIColor colorWithHexString:@"e1e1e1"];
+    
+    
+    if(_offers.count == 0){
+        
+        UILabel *noOffersLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+        noOffersLabel.backgroundColor = [UIColor clearColor];
+        noOffersLabel.font = [UIFont helveticaWithSize:19];
+        noOffersLabel.text = NSLocalizedString(@"no offers", @"no offers").capitalizedString;
+        noOffersLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        noOffersLabel.textAlignment = NSTextAlignmentCenter;
+        [self.view addSubview:noOffersLabel];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning

@@ -19,7 +19,7 @@ This class is responsible for:
 #import "SPFormCell.h"
 
 
-@interface SPMainController : UIViewController<UICollectionViewDataSource, SPFormCellDelegate>
+@interface SPMainController : UIViewController<UICollectionViewDataSource, SPFormCellDelegate, SPSponsorCellDelegate>
 
 -(void) requestDataFromServer;
 -(BOOL) validateForm;

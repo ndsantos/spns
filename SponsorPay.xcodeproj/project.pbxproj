@@ -61,6 +61,7 @@
 		4FF36B7B1804434A009D664B /* SPFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B7A1804434A009D664B /* SPFormCell.m */; };
 		4FF36B7E18046351009D664B /* SPOffersPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B7D18046351009D664B /* SPOffersPadViewController.m */; };
 		4FF36B8118046532009D664B /* SPOfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B8018046532009D664B /* SPOfferCell.m */; };
+		4FF36B8418046816009D664B /* SPLinkedInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF36B8318046816009D664B /* SPLinkedInViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,8 @@
 		4FF36B7D18046351009D664B /* SPOffersPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPOffersPadViewController.m; sourceTree = "<group>"; };
 		4FF36B7F18046532009D664B /* SPOfferCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPOfferCell.h; path = Views/SPOfferCell.h; sourceTree = "<group>"; };
 		4FF36B8018046532009D664B /* SPOfferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPOfferCell.m; path = Views/SPOfferCell.m; sourceTree = "<group>"; };
+		4FF36B8218046816009D664B /* SPLinkedInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPLinkedInViewController.h; path = Controllers/SPLinkedInViewController.h; sourceTree = "<group>"; };
+		4FF36B8318046816009D664B /* SPLinkedInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPLinkedInViewController.m; path = Controllers/SPLinkedInViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +293,8 @@
 				4FCD537F1804202300504B25 /* SPOffersViewController.m */,
 				4FF36B731804388F009D664B /* SPNavigationViewController.h */,
 				4FF36B741804388F009D664B /* SPNavigationViewController.m */,
+				4FF36B8218046816009D664B /* SPLinkedInViewController.h */,
+				4FF36B8318046816009D664B /* SPLinkedInViewController.m */,
 			);
 			name = Contollers;
 			sourceTree = "<group>";
@@ -558,6 +563,7 @@
 				4FF36B72180430BB009D664B /* UIWebView+AFNetworking.m in Sources */,
 				4FF36B7E18046351009D664B /* SPOffersPadViewController.m in Sources */,
 				4FCD53831804216D00504B25 /* SPOffersPhoneViewController.m in Sources */,
+				4FF36B8418046816009D664B /* SPLinkedInViewController.m in Sources */,
 				4FCD535C18034FA600504B25 /* AFHTTPSessionManager.m in Sources */,
 				4FCD536018034FA600504B25 /* AFURLRequestSerialization.m in Sources */,
 				4FCD533518031DCE00504B25 /* SPMainPadViewController.m in Sources */,
@@ -699,7 +705,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SponsorPay/SponsorPay-Prefix.pch";
 				INFOPLIST_FILE = "SponsorPay/SponsorPay-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -712,7 +720,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SponsorPay/SponsorPay-Prefix.pch";
 				INFOPLIST_FILE = "SponsorPay/SponsorPay-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

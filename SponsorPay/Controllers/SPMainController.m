@@ -8,6 +8,7 @@
 
 #import "SPMainController.h"
 #import "SPConnectionManager.h"
+#import "SPLinkedInViewController.h"
 
 
 static NSString *sponsorCellId = @"SponsorCellID";
@@ -19,6 +20,14 @@ static NSString *formCellId = @"FormCellID";
 @end
 
 @implementation SPMainController
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+    if(self = [super initWithNibName:nil bundle:nil]){
+        self.title = NSLocalizedString(@"Set Up", @"Main controller title");
+    }
+    return self;
+}
+
 
 
 -(void)viewDidLoad{
@@ -46,6 +55,16 @@ static NSString *formCellId = @"FormCellID";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    //keyboard notifications
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(keyboardWillShow:)
+     name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(keyboardWillHide:)
+     name:UIKeyboardWillHideNotification object:nil];
     
     //Adjust collection for orientation
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*)_collectionView.collectionViewLayout;
@@ -55,12 +74,12 @@ static NSString *formCellId = @"FormCellID";
         layout.itemSize = CGSizeMake(_collectionView.frame.size.width, _collectionView.bounds.size.height/2);
     }
 }
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    if(self = [super initWithNibName:nil bundle:nil]){
-        self.title = NSLocalizedString(@"Set Up", @"Main controller title");
-    }
-    return self;
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+
 
 -(BOOL)validateForm{
     if([((UITextField*)[self.view viewWithTag:kTagUserIdTextField]).text isEqualToString:@""]){
@@ -125,7 +144,9 @@ static NSString *formCellId = @"FormCellID";
     
    
     if(indexPath.row == 0){
-        return [collectionView dequeueReusableCellWithReuseIdentifier:sponsorCellId forIndexPath:indexPath];
+        SPSponsorCell *sponsorCell = [collectionView dequeueReusableCellWithReuseIdentifier:sponsorCellId forIndexPath:indexPath];
+        sponsorCell.delegate = self;
+        return sponsorCell;
     } else {
         SPFormCell* formCell = [collectionView dequeueReusableCellWithReuseIdentifier:formCellId forIndexPath:indexPath];
         formCell.delegate = self;
@@ -139,6 +160,11 @@ static NSString *formCellId = @"FormCellID";
 #pragma mark form cell delegate
 -(void)didPressGoInFormCell:(SPFormCell *)formCell{
     [self requestDataFromServer];
+}
+
+#pragma mark sponsor delegate
+-(void)wantsToShowLinkedIn{
+    [self.navigationController pushViewController:[[SPLinkedInViewController alloc] initWithNibName:nil bundle:nil] animated:YES];
 }
 
 #pragma mark rotation

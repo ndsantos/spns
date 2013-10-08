@@ -104,12 +104,13 @@
         
         if([[NSString stringWithFormat:@"%@%@", operation.responseString, apiKey].sha1String isEqualToString:[operation.response.allHeaderFields valueForKey:@"X-Sponsorpay-Response-Signature"]]){
             
-            NSError *errorFile;
-            NSData *fakeContent = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"fakeresponse" ofType:@"json"]];
-
-            NSDictionary *respDic = [NSJSONSerialization JSONObjectWithData:fakeContent options:kNilOptions error:&errorFile];
             
-            SPServerResponseObject *serverResponseObject = [[SPServerResponseObject alloc] initWithDictionary:respDic];
+            //fake content
+            //NSError *errorFile;
+            //NSData *fakeContent = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"fakeresponse" ofType:@"json"]];
+            //NSDictionary *respDic = [NSJSONSerialization JSONObjectWithData:fakeContent options:kNilOptions error:&errorFile];
+            
+            SPServerResponseObject *serverResponseObject = [[SPServerResponseObject alloc] initWithDictionary:responseObject];
             
             successBlock(serverResponseObject);
             

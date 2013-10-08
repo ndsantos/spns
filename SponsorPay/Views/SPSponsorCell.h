@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol SPSponsorCellDelegate;
+
 @interface SPSponsorCell : UICollectionViewCell
+
+
+@property (nonatomic, weak) id<SPSponsorCellDelegate> delegate;
+
+@end
+
+@protocol SPSponsorCellDelegate <NSObject>
+
+-(void) wantsToShowLinkedIn;
 
 @end
