@@ -79,26 +79,25 @@
 }
 
 #pragma mark requests
--(void)getServerContentForUserId:(NSString *)userId withApiKey:(NSString *)apiKey withAppId:(NSString *)appId withCustomParams:(NSString *)customParams withSuccessBlock:(void (^)(SPServerResponseObject *content))successBlock withFailureBlock:(void (^)(NSString *errorMsg))errorBlock{
+-(void)requestSponsorPayWithParams:(NSDictionary *)params withApiKey:(NSString *)apiKey withSuccessBlock:(void (^)(SPServerResponseObject *))successBlock withFailureBlock:(void (^)(NSString *))errorBlock{
     
-    
-    //prepare parameters
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:userId, kParameterNameUserId, appId, kParameterNameAppId, self.ipAddress, kParameterNameIP, self.locale, kParameterNameLocale, self.offerTypes, kParameterNameOfferTypes, self.deviceId, kParameterNameDeviceId,  nil];
-    
-    if(![customParams isEqualToString:@""]){
-        [params setValue:customParams forKey:kParameterNameCustom];
-    }
+    //set timestamp
     [params setValue:[NSString stringWithFormat:@"%i", (int)[NSDate date].timeIntervalSince1970] forKey:kParameterNameTimestamp];
-    [params setValue:[self hashkeyFromParams:params withApiKey:apiKey] forKey:kParameterNameHashkey];
     
+    //add hashkey
+    [params setValue:[self hashkeyFromParams:params withApiKey:apiKey] forKey:kParameterNameHashkey];
+ 
+    
+    // create url
+    NSURL *url = [self urlFromParams:params];
     
     // create request
-    NSURL *url = [self urlFromParams:params];
-
     AFHTTPRequestOperation *request = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:url]];
+    
     
     //set serializer to json
     request.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    
     
     [request setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -133,10 +132,29 @@
     }];
     
     [_connectionOperationQueue addOperation:request];
+
+}
+
+
+-(void)getServerContentForUserId:(NSString *)userId withApiKey:(NSString *)apiKey withAppId:(NSString *)appId withCustomParams:(NSString *)customParams withSuccessBlock:(void (^)(SPServerResponseObject *content))successBlock withFailureBlock:(void (^)(NSString *errorMsg))errorBlock{
     
     
+    //prepare parameters
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:userId, kParameterNameUserId, appId, kParameterNameAppId, self.ipAddress, kParameterNameIP, self.locale, kParameterNameLocale, self.offerTypes, kParameterNameOfferTypes, self.deviceId, kParameterNameDeviceId,  nil];
     
     
+    //add custom params if exists
+    if(![customParams isEqualToString:@""]){
+        [params setValue:customParams forKey:kParameterNameCustom];
+    }
+    
+    
+
+    [self requestSponsorPayWithParams:params withApiKey:apiKey withSuccessBlock:^(SPServerResponseObject *content) {
+        successBlock(content);
+    } withFailureBlock:^(NSString *errorMsg) {
+        errorBlock(errorMsg);
+    }];
 }
 
 

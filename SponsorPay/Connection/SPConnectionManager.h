@@ -81,11 +81,14 @@
 // 1. mount all the params
 // 2. generate hashkey
 // 3. parse content
+
 -(void)getServerContentForUserId:(NSString *)userId withApiKey:(NSString *)apiKey withAppId:(NSString *)appId withCustomParams:(NSString *)customParams withSuccessBlock:(void (^)(SPServerResponseObject *content))successBlock withFailureBlock:(void (^)(NSString *errorMsg))errorBlock;
 
 
 -(NSString *) hashkeyFromParams:(NSDictionary*) params withApiKey:(NSString *) apiKey;
 
 -(NSURL*) urlFromParams:(NSDictionary*) params;
+
+-(void) requestSponsorPayWithParams:(NSDictionary*) params withApiKey:(NSString*) apiKey withSuccessBlock:(void (^)(SPServerResponseObject *content))successBlock withFailureBlock:(void (^)(NSString *errorMsg))errorBlock;
 
 @end
